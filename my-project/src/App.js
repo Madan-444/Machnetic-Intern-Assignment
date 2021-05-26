@@ -1,28 +1,19 @@
-import React from 'react'
-import { connect } from 'react-redux';
+import React from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-import { fetchUserRequest } from './Redux/actions';
+import LandingPage from "./Components/LandingPage";
+import MainPage from "./Components/MainPage";
 
-const mapStateToProps = (store)=> {
-  const {users} = store.app
-  return {users}
-}
-
-function App({users,fetchUserRequest}) {
-  console.log("The users",users)
+function App() {
   return (
-    <div className="App">
+    <BrowserRouter>
+      <Switch>
+        <Route path="/" exact component={LandingPage} />
+        <Route path="/main-page" exact component={MainPage} />
 
-      <button onClick = {()=> fetchUserRequest('Madan-444')}>FetchData</button>
-      
-    </div>
+      </Switch>
+    </BrowserRouter>
   );
 }
 
-const mapDispatchToProps = (dispatch)=> {
-  return {
-    fetchUserRequest: (nae)=> dispatch(fetchUserRequest(nae)),
-  }
-}
-
-export default connect(mapStateToProps,mapDispatchToProps) (App);
+export default App;
