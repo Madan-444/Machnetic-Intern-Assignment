@@ -4,162 +4,305 @@
 @import "media_900";
 
 body {
-    background: linear-gradient(#4CA9DF,#292E91);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    overflow: hidden;
-
+  background: linear-gradient(#4ca9df, #292e91);
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
 }
-p{
-    font-family: 'Roboto', sans-serif;
+p {
+  font-family: "Roboto", sans-serif;
 }
 
 // ************************ Styling Landing Page *******************************
 .landing_page {
-    height: 100vh;
-    width: 100vw;
- 
-    @include myFlexBox(center,center,row);
-    #{&}--container {
-        margin-top: -50px;
-        height: calc(300px + 3vw);
-        flex-basis: 400px;
-        // background-color: yellowgreen;
-        @include myFlexBox(center,center,column);
-        &__heading{
-            // background-color: purple;
-            height: 70px;
-            width: 100%;
-            font-weight: 700;
-            @include myFlexBox(center,center,column);
-        }
-        &__heading p:first-child {
-            font-size: calc(25px + 0.5vw);
-            color: white;
-            font-weight: 700;
-        }
-        &__heading p:last-child {
-            font-size: calc(7px + 0.4vw);
-            color: white;
-            font-weight: 300;
-        }
-        &__input {
-            // background-color: gray;
-            padding: 0 10px;
-            width: 100%;
-            margin-top: calc(10px + 0.3vw);
-            p {
-                color: white;
-                font-size: 18px;
-            }
-            &--container {
-                @include myFlexBox(space-between,center,row);
-                height: 50px;
-                input {
-                    width: calc(160px + 4vw);
-                    padding: 10px 20px;
-                    border-radius: 6px;
-                    background-color: hsla(0, 0%, 93%, 0.63);
-                }
-                button {
-                    width: calc(100px + 2.5vw);
-                    padding: 10px 20px;
-                    border: 0px;
-                    border-radius: 6px;
-                    background-color: #DE5A21;
-                    color: white;
-                    cursor: pointer;
-                }
-            }
-        }
+  height: 100vh;
+  width: 100vw;
+
+  @include myFlexBox(center, center, row);
+  #{&}--container {
+    margin-top: -50px;
+    height: calc(300px + 3vw);
+    flex-basis: 400px;
+    @include myFlexBox(center, center, column);
+    &__heading {
+      width: 100%;
+      font-weight: 700;
+      @include myFlexBox(center, center, column);
     }
+    &__heading p:first-child {
+      font-size: calc(25px + 0.5vw);
+      color: white;
+      font-weight: 700;
+    }
+    &__heading p:last-child {
+      font-size: calc(7px + 0.4vw);
+      color: white;
+      font-weight: 300;
+    }
+    &__input {
+      // background-color: gray;
+      padding: 0 10px;
+      width: 100%;
+      margin-top: calc(10px + 0.3vw);
+      p {
+        color: white;
+        font-size: 18px;
+      }
+      &--container {
+        @include myFlexBox(space-between, center, row);
+        height: 50px;
+        input {
+          width: calc(160px + 4vw);
+          padding: 10px 20px;
+          border-radius: 6px;
+          background-color: hsla(0, 0%, 93%, 0.63);
+        }
+        button {
+          width: calc(100px + 2.5vw);
+          padding: 10px 20px;
+          border: 0px;
+          border-radius: 6px;
+          background-color: #de5a21;
+          color: white;
+          cursor: pointer;
+        }
+      }
+    }
+  }
 }
 
 // Styling user details card
 .user_details {
-    height: 700px;
-    width: 700px;
-    background:linear-gradient(#292E91,#4CA9DF);
-    overflow: hidden;
-    position: absolute;
-    top: 20%;
-    left:70%;
-    transform: rotate(45deg) translate(-20px,-200px) scale(1);
-    
+  height: 700px;
+  width: 700px;
+  background: linear-gradient(#292e91, #4ca9df);
+  overflow: hidden;
+  position: absolute;
+  top: 20%;
+  left: 70%;
+  transform: rotate(45deg) translate(-20px, -200px) scale(1);
 }
+
 .user_details--card {
-    position: absolute;
-    top: 22%;
-    left: 81%;
-    height: 350px;
-    width: 250px;
-    background:linear-gradient(#5258d348,hsla(202, 59%, 25%, 0.192));
-    box-shadow: 1px 1px 6px 3px rgb(36, 34, 32);
+  position: absolute;
+  top: 22%;
+  left: 81%;
+  height: 350px;
+  width: 250px;
+  background: linear-gradient(#5258d348, hsla(202, 59%, 25%, 0.192));
+  box-shadow: 1px 1px 6px 3px rgb(36, 34, 32);
 }
 .profile {
-    height: 100%;
-    width: 100%;
-    margin-top: 10px;
-    @include myFlexBox(flex-start,center,column);
-    &_avatar {
-        img {
-            height: 110px;
-            width: 110px;
-            border-radius: 50%;
-        }
+  height: 100%;
+  width: 100%;
+  margin-top: 10px;
+  @include myFlexBox(flex-start, center, column);
+  &_avatar {
+    img {
+      height: 110px;
+      width: 110px;
+      border-radius: 50%;
     }
-    &_name {
-        margin: 10px 0 0 0;
-        color: rgba(255, 255, 255, 0.801);
+  }
+  &_name {
+    margin: 10px 0 0 0;
+    color: rgba(255, 255, 255, 0.801);
+  }
+  &_bio {
+    // background-color: rgba(39, 82, 69, 0.877);
+    p {
+      padding: 10px;
     }
-    &_bio {
-        // background-color: rgba(39, 82, 69, 0.877);
-        p {
-            padding: 10px;
-        }
-        border-bottom: 1px white solid;
-    }
-    &_info {
-        padding: 0 10px;
-        border-bottom: 1px white solid;
-    }
-    &_button {
-        width: 80%;
-        margin: 10px 0;
- 
-        button {
-            width: 100%;
-            padding: 5px;
-            background-color: #DE5A21;;
-            border: 0px;
-            box-shadow: 0px 0px 2px 2px rgb(119, 0, 255);
-            cursor: pointer;
-            position: relative;
-        }
-    }
+    border-bottom: 1px white solid;
+  }
+  &_info {
+    padding: 0 10px;
+    border-bottom: 1px white solid;
+  }
+  &_button {
+    width: 80%;
+    margin: 10px 0;
 
+    button {
+      width: 100%;
+      padding: 5px;
+      background-color: #de5a21;
+      border: 0px;
+      box-shadow: 0px 0px 2px 2px rgb(119, 0, 255);
+      cursor: pointer;
+      position: relative;
+    }
+  }
 }
 .profile_button--container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    background-color: #4CA9DF;
-    transform: scaleX(0);
-    z-index: -1;
-    transform-origin: center;
-    transition: transform 0.5s cubic-bezier(1, 0, 0, 1);
-
-
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #4ca9df;
+  transform: scaleX(0);
+  z-index: -1;
+  transform-origin: center;
+  transition: transform 0.5s cubic-bezier(1, 0, 0, 1);
 }
 .profile_button--container {
-    z-index: 1;
-    // color: yellowgreen;
+  z-index: 1;
+  // color: yellowgreen;
 }
 .profile_button--container:hover::before {
-    transform: scaleX(1);
+  transform: scaleX(1);
+}
+// main page Styling
+.main_page {
+  height: 100%;
+  width: 100%;
+  @include myFlexBox(center, center, row);
+  // background-color: purple;
+  &--container {
+    height: 80vh;
+    margin-top: 40px;
+    width: 90%;
+    // background-color: blue;
+    &__butttons {
+      margin-bottom: 30px;
+      @include myFlexBox(space-between, center, row);
+      p {
+        font-size: 30px;
+      }
+      button {
+        padding: 5px 30px;
+        color: white;
+        background-color: #de5a21;
+        border: 0px;
+        cursor: pointer;
+        &:hover {
+          background-color: yellowgreen;
+        }
+      }
+    }
+    &__box {
+      min-height: 100%;
+      width: 100%;
+      background-color: white;
+      @include myFlexBox(flex-start, center, column);
+
+      &--avatar {
+        @include myFlexBox(center, center, column);
+        // transform: translateY(-40%);
+        margin-top: -50px;
+        img {
+          height: 100px;
+          width: 100px;
+          border-radius: 50%;
+        }
+        h4 {
+          font-size: calc(20px + 0.5vw);
+        }
+      }
+      &--repoDetails {
+        h5 {
+          font-size: calc(25px + 1vw);
+          text-align: center;
+        }
+        p {
+          font-size: 18px;
+          background-color: #c4c4c4;
+          margin-right: 20px;
+          padding: 5px 10px;
+          @include media-Tablet {
+            padding: 2px 5px;
+            font-size: 12px;
+          }
+        }
+        @include myFlexBox(center, center, row);
+        &__folowers {
+          @include myFlexBox(center, center, column);
+        }
+        &__following {
+          @include myFlexBox(center, center, column);
+        }
+        &__repositories {
+          @include myFlexBox(center, center, column);
+        }
+      }
+    }
+    &__moreInfo {
+      margin: 40px 0;
+      // background-color: yellowgreen;
+      width: 90%;
+      @include myFlexBox(space-between, center, row);
+      @include media-Tablet {
+        @include myFlexBox(center, center, column);
+      }
+      &--container {
+        padding: 30px;
+        flex-basis: 525px;
+        border: 1px solid #c4c4c4;
+        height: 100%;
+        @include myFlexBox(center, space-between, column);
+        @include media-Tablet {
+            padding: 10px;
+            flex-basis: 300px;
+            // min-height: 100%;
+        }
+ 
+        &__email_n_organization {
+          @include myFlexBox(space-between, center, row);
+          margin: 10px 0;
+          @include media-Tablet {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            // margin-top: -200px;
+        }
+          // background-color: plum;
+        }
+        &__location_n_doj {
+          @include myFlexBox(space-between, center, row);
+          margin: 10px 0;
+          @include media-Tablet {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+          // background-color: plum;
+        }
+        &__twitter_n_website {
+          @include myFlexBox(space-between, center, row);
+          margin: 10px 0 0 0;
+          @include media-Tablet {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+          // background-color: plum;
+        }
+      }
+      &--bio {
+        padding: 30px;
+        border: 1px solid #c4c4c4;
+        flex-basis: 525px;
+        height: 100%;
+        @include media-Tablet {
+            // margin-bottom: 20px;
+            flex-basis: 125px;
+        }
+
+      }
+      &--bio p:last-child {
+        margin-top: 20px;
+      }
+    }
+  }
 }
 
+.main_page--doj {
+  margin-right: 30px;
+}
+.main_page--website {
+  margin-right: -10px;
+}
