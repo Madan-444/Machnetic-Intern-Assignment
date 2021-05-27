@@ -5,7 +5,7 @@ import { from, of } from 'rxjs';
 
 // import action types
 import { FETCH_USERS_REQUEST, HANDLE_ERROR } from './actionType';
-import {fetchUserSuccess,handleError} from './actions'
+import {fetchUserSuccess} from './actions'
 
 // fetching data epic
   export const fetchUserEpic = action$ => action$.pipe(

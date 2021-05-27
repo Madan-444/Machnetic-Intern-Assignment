@@ -13,7 +13,6 @@ const mapStateToProps = store=> {
 }
 
 function MainPage({users}) {
-    console.log("The users from main page",users)
       const {avatar_url,bio,created_at,email,followers,following,location,name,company,public_repos,twitter_username,hireable,blog}= users
     return (
         <div className='main_page'>

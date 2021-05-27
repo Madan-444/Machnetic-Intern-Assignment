@@ -14,7 +14,6 @@ function LandingPage({
   inputName,
   fetchSuccessStatus,
 }) {
-  console.log("The input name", input_name);
   return (
     <>
       <div className="landing_page">
@@ -32,7 +31,7 @@ function LandingPage({
                 onChange={(e) => inputName(e.target.value)}
               />
               <button onClick={() => fetchUserRequest(input_name)} className='landing_page--container__input--container_button' >
-                Generage
+                Generate
               </button>
             </div>
           </div>

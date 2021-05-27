@@ -8,12 +8,11 @@ const mapStateToProps = (store) => {
 };
 
 function UserProfile({ users }) {
-  console.log(users);
   const { avatar_url, company, email, location, name, bio } = users;
   return (
     <div className="profile">
       <div className="profile_avatar">
-        <img src={avatar_url} alt="avatar image" />
+        <img src={avatar_url} alt="avatar_image" />
       </div>
       <div className="profile_name">
         <p>{name}</p>
@@ -37,8 +36,5 @@ function UserProfile({ users }) {
     </div>
   );
 }
-const mapDispatchToProps = (dispatch) => {
-  return {};
-};
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserProfile);
+export default connect(mapStateToProps, null)(UserProfile);

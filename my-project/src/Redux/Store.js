@@ -14,5 +14,3 @@ const store = createStore(
 epicMiddleware.run(rootEpic)
 
 export default store;
-
-console.log("The initial store",store.getState())
