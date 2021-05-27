@@ -67,11 +67,19 @@ p {
           background-color: #de5a21;
           color: white;
           cursor: pointer;
+          transition: 0.2s ease-in-out;
+          &:hover {
+            
+            box-shadow: 0px 2px 40px rgba(224, 222, 231, 0.753);
+            background-color: rgb(90, 231, 8);
+            
+          }
         }
       }
     }
   }
 }
+
 
 // Styling user details card
 .user_details {
@@ -83,6 +91,10 @@ p {
   top: 20%;
   left: 70%;
   transform: rotate(45deg) translate(-20px, -200px) scale(1);
+  @include media_900_bp {
+
+    transform:  scale(0);
+  }
 }
 
 .user_details--card {
@@ -93,6 +105,13 @@ p {
   width: 250px;
   background: linear-gradient(#5258d348, hsla(202, 59%, 25%, 0.192));
   box-shadow: 1px 1px 6px 3px rgb(36, 34, 32);
+  @include media_900_bp {
+    top: 60%;
+    left: 35%;
+  }
+  @include media-Tablet {
+      left: 30%;
+  }
 }
 .profile {
   height: 100%;

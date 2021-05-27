@@ -31,7 +31,7 @@ function LandingPage({
                 value={input_name}
                 onChange={(e) => inputName(e.target.value)}
               />
-              <button onClick={() => fetchUserRequest(input_name)}>
+              <button onClick={() => fetchUserRequest(input_name)} className='landing_page--container__input--container_button' >
                 Generage
               </button>
             </div>
