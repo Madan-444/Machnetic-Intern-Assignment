@@ -1,0 +1,8 @@
+$tabBreakPoint: 700px;
+
+@mixin media-Tablet {
+    @media screen and (max-width: $tabBreakPoint) {
+        @content;
+    }
+}
+

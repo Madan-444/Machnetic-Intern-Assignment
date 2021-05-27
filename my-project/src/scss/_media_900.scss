@@ -1,0 +1,7 @@
+$breakPoint: 900px;
+
+@mixin media_900_bp {
+    @media screen and (max-width: $breakPoint) {
+        @content;
+    }
+};

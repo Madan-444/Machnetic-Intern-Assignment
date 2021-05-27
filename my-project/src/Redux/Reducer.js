@@ -1,10 +1,11 @@
-import {FETCH_USERS_SUCCESS} from './actionType'
+import {FETCH_USERS_SUCCESS, INPUT_NAME} from './actionType'
 
 
 const initialState = {
 
     users: [],
-    fetchStatus: true
+    fetchStatus: true,
+    input_name: ""
 }
 
 const fetchUsersReducer = (state = initialState,action)=> {
@@ -14,6 +15,12 @@ const fetchUsersReducer = (state = initialState,action)=> {
             ...state,
             users: action.payload
           };
+    }
+    if(action.type === INPUT_NAME) {
+        return {
+            ...state,
+            input_name: action.payload.inputname
+        }
     }
     return state;
 }

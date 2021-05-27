@@ -1,0 +1,165 @@
+@import "mixins";
+@import "reset";
+@import "media-Tab";
+@import "media_900";
+
+body {
+    background: linear-gradient(#4CA9DF,#292E91);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+
+}
+p{
+    font-family: 'Roboto', sans-serif;
+}
+
+// ************************ Styling Landing Page *******************************
+.landing_page {
+    height: 100vh;
+    width: 100vw;
+ 
+    @include myFlexBox(center,center,row);
+    #{&}--container {
+        margin-top: -50px;
+        height: calc(300px + 3vw);
+        flex-basis: 400px;
+        // background-color: yellowgreen;
+        @include myFlexBox(center,center,column);
+        &__heading{
+            // background-color: purple;
+            height: 70px;
+            width: 100%;
+            font-weight: 700;
+            @include myFlexBox(center,center,column);
+        }
+        &__heading p:first-child {
+            font-size: calc(25px + 0.5vw);
+            color: white;
+            font-weight: 700;
+        }
+        &__heading p:last-child {
+            font-size: calc(7px + 0.4vw);
+            color: white;
+            font-weight: 300;
+        }
+        &__input {
+            // background-color: gray;
+            padding: 0 10px;
+            width: 100%;
+            margin-top: calc(10px + 0.3vw);
+            p {
+                color: white;
+                font-size: 18px;
+            }
+            &--container {
+                @include myFlexBox(space-between,center,row);
+                height: 50px;
+                input {
+                    width: calc(160px + 4vw);
+                    padding: 10px 20px;
+                    border-radius: 6px;
+                    background-color: hsla(0, 0%, 93%, 0.63);
+                }
+                button {
+                    width: calc(100px + 2.5vw);
+                    padding: 10px 20px;
+                    border: 0px;
+                    border-radius: 6px;
+                    background-color: #DE5A21;
+                    color: white;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+// Styling user details card
+.user_details {
+    height: 700px;
+    width: 700px;
+    background:linear-gradient(#292E91,#4CA9DF);
+    overflow: hidden;
+    position: absolute;
+    top: 20%;
+    left:70%;
+    transform: rotate(45deg) translate(-20px,-200px) scale(1);
+    
+}
+.user_details--card {
+    position: absolute;
+    top: 22%;
+    left: 81%;
+    height: 350px;
+    width: 250px;
+    background:linear-gradient(#5258d348,hsla(202, 59%, 25%, 0.192));
+    box-shadow: 1px 1px 6px 3px rgb(36, 34, 32);
+}
+.profile {
+    height: 100%;
+    width: 100%;
+    margin-top: 10px;
+    @include myFlexBox(flex-start,center,column);
+    &_avatar {
+        img {
+            height: 110px;
+            width: 110px;
+            border-radius: 50%;
+        }
+    }
+    &_name {
+        margin: 10px 0 0 0;
+        color: rgba(255, 255, 255, 0.801);
+    }
+    &_bio {
+        // background-color: rgba(39, 82, 69, 0.877);
+        p {
+            padding: 10px;
+        }
+        border-bottom: 1px white solid;
+    }
+    &_info {
+        padding: 0 10px;
+        border-bottom: 1px white solid;
+    }
+    &_button {
+        width: 80%;
+        margin: 10px 0;
+ 
+        button {
+            width: 100%;
+            padding: 5px;
+            background-color: #DE5A21;;
+            border: 0px;
+            box-shadow: 0px 0px 2px 2px rgb(119, 0, 255);
+            cursor: pointer;
+            position: relative;
+        }
+    }
+
+}
+.profile_button--container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #4CA9DF;
+    transform: scaleX(0);
+    z-index: -1;
+    transform-origin: center;
+    transition: transform 0.5s cubic-bezier(1, 0, 0, 1);
+
+
+}
+.profile_button--container {
+    z-index: 1;
+    // color: yellowgreen;
+}
+.profile_button--container:hover::before {
+    transform: scaleX(1);
+}
+
