@@ -1,4 +1,4 @@
-import { FETCH_USERS_SUCCESS,FETCH_USERS_REQUEST,FETCH_USERS_FAILURE, INPUT_NAME } from "./actionType"
+import { FETCH_USERS_SUCCESS,FETCH_USERS_REQUEST,FETCH_USERS_FAILURE, INPUT_NAME, HANDLE_ERROR } from "./actionType"
 
 export const fetchUserRequest = (name)=> {
     return {
@@ -27,5 +27,11 @@ export const inputName = (inputname)=>{
         payload: {
             inputname
         }
+    }
+}
+export const handleError = (error)=> {
+    return {
+        type: HANDLE_ERROR,
+        payload: error
     }
 }
