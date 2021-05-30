@@ -1,11 +1,11 @@
-import {mergeMap,map,catchError} from 'rxjs/operators'
+import {mergeMap,map,catchError, startWith} from 'rxjs/operators'
 import { ofType } from 'redux-observable';
 import axios from 'axios'
 import { from, of } from 'rxjs';
 
 // import action types
 import { FETCH_USERS_REQUEST, HANDLE_ERROR } from './actionType';
-import {fetchUserSuccess} from './actions'
+import {fetchUserSuccess, handleLoading} from './actions'
 
 // fetching data epic
   export const fetchUserEpic = action$ => action$.pipe(
@@ -16,7 +16,8 @@ import {fetchUserSuccess} from './actions'
        catchError((error)=> of({
          type: HANDLE_ERROR,
          payload: error
-       }))
+       })),
+       startWith(handleLoading())
      )
       )
   )

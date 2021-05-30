@@ -4,8 +4,8 @@ import { connect } from "react-redux";
 import { fetchUserRequest, inputName } from "../../Redux/actions";
 
 const mapStateToProps = (store) => {
-  const { input_name, fetchSuccessStatus } = store.app;
-  return { input_name, fetchSuccessStatus };
+  const { input_name, fetchSuccessStatus,loadingFlag } = store.app;
+  return { input_name, fetchSuccessStatus,loadingFlag };
 };
 
 function LandingPage({
@@ -13,11 +13,14 @@ function LandingPage({
   input_name,
   inputName,
   fetchSuccessStatus,
+  loadingFlag
 }) {
   return (
+   
     <>
       <div className="landing_page">
         <div className="landing_page--container">
+          {loadingFlag&& <h1 className='landing_page--container__loading'>Loading...</h1>}
           <div className="landing_page--container__heading">
             <p>Github Profile</p>
             <p>Generate your Github Profile</p>

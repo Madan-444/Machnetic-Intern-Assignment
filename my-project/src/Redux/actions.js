@@ -1,4 +1,10 @@
-import { FETCH_USERS_SUCCESS,FETCH_USERS_REQUEST,FETCH_USERS_FAILURE, INPUT_NAME, HANDLE_ERROR } from "./actionType"
+import { FETCH_USERS_SUCCESS,FETCH_USERS_REQUEST,FETCH_USERS_FAILURE, INPUT_NAME, HANDLE_ERROR, HANDLE_LOADING } from "./actionType"
+
+export const handleLoading=()=> {
+    return {
+        type: HANDLE_LOADING
+    }
+}
 
 export const fetchUserRequest = (name)=> {
     return {

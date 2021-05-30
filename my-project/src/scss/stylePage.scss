@@ -19,7 +19,9 @@ p {
 .landing_page {
   height: 100vh;
   width: 100vw;
-
+  &__loading {
+    margin-bottom:20px; 
+  }
   @include myFlexBox(center, center, row);
   #{&}--container {
     margin-top: -50px;
@@ -250,11 +252,11 @@ p {
       }
     }
     &__moreInfo {
-      margin: 40px 0;
+      margin-top: 20px;
       // background-color: yellowgreen;
       width: 90%;
       @include myFlexBox(space-between, center, row);
-      @include media-Tablet {
+      @include media_900_bp {
         @include myFlexBox(center, center, column);
       }
       &--container {
@@ -262,44 +264,34 @@ p {
         flex-basis: 525px;
         border: 1px solid #c4c4c4;
         height: 100%;
-        @include myFlexBox(center, space-between, column);
+        @include myFlexBox(space-between, center, row);
         @include media-Tablet {
             padding: 10px;
             flex-basis: 300px;
             // min-height: 100%;
         }
+        &__col-1 {
+          height: min-content;
+          width: 100%;
+          // background-color: yellow;
+          & div {
+            margin-bottom: 20px;
+          }
+        }
+        &__col-2 {
+          margin-left: 100px;
+          height: min-content;
+          width: 100%;
+          // @include myFlexBox(center,)
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          // background-color: purple;
+          & div {
+            margin-bottom: 20px;
+          }
+        }
  
-        &__email_n_organization {
-          @include myFlexBox(space-between, center, row);
-          margin: 10px 0;
-          @include media-Tablet {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            // margin-top: -200px;
-        }
-          // background-color: plum;
-        }
-        &__location_n_doj {
-          @include myFlexBox(space-between, center, row);
-          margin: 10px 0;
-          @include media-Tablet {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-          // background-color: plum;
-        }
-        &__twitter_n_website {
-          @include myFlexBox(space-between, center, row);
-          margin: 10px 0 0 0;
-          @include media-Tablet {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-          // background-color: plum;
-        }
       }
       &--bio {
         padding: 30px;
@@ -325,3 +317,42 @@ p {
 .main_page--website {
   margin-right: -10px;
 }
+
+
+
+// &__email_n_organization {
+//   @include myFlexBox(space-between, center, row);
+//   margin: 10px 0;
+//   @include media-Tablet {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: flex-start;
+//     // margin-top: -200px;
+// }
+//   // background-color: plum;
+// }
+// &__location_n_doj {
+//   @include myFlexBox(space-between, center, row);
+//   margin: 10px 0;
+//   @include media-Tablet {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: flex-start;
+// }
+//   // background-color: plum;
+// }
+// &__twitter_n_website {
+//   @include myFlexBox(space-between, center, row);
+//   margin: 10px 0 0 0;
+//   @include media-Tablet {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: flex-start;
+// }
+// }
+
+
+
+
+
+
